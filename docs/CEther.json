@@ -1,0 +1,951 @@
+{
+    "methods": {
+        "_acceptAdmin()": {
+            "stateMutability": "nonpayable",
+            "code": "function _acceptAdmin() external nonpayable returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "Accepts transfer of admin rights. msg.sender must be pendingAdmin",
+            "details": "Admin function for pending admin to accept role and update admin"
+        },
+        "_addReserves()": {
+            "stateMutability": "payable",
+            "code": "function _addReserves() external payable returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "The sender adds to reserves."
+        },
+        "_reduceReserves(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function _reduceReserves(uint256 reduceAmount) external nonpayable returns (uint256)",
+            "inputs": {
+                "reduceAmount": {
+                    "type": "uint256",
+                    "description": "Amount of reduction to reserves"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "Accrues interest and reduces reserves by transferring to admin"
+        },
+        "_setComptroller(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function _setComptroller(contract ComptrollerInterface newComptroller) external nonpayable returns (uint256)",
+            "inputs": {
+                "newComptroller": {
+                    "type": "contract ComptrollerInterface"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "Sets a new comptroller for the market",
+            "details": "Admin function to set a new comptroller"
+        },
+        "_setInterestRateModel(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function _setInterestRateModel(contract InterestRateModel newInterestRateModel) external nonpayable returns (uint256)",
+            "inputs": {
+                "newInterestRateModel": {
+                    "type": "contract InterestRateModel",
+                    "description": "the new interest rate model to use"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "accrues interest and updates the interest rate model using _setInterestRateModelFresh",
+            "details": "Admin function to accrue interest and update the interest rate model"
+        },
+        "_setPendingAdmin(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function _setPendingAdmin(address payable newPendingAdmin) external nonpayable returns (uint256)",
+            "inputs": {
+                "newPendingAdmin": {
+                    "type": "address payable",
+                    "description": "New pending admin."
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "Begins transfer of admin rights. The newPendingAdmin must call `_acceptAdmin` to finalize the transfer.",
+            "details": "Admin function to begin change of admin. The newPendingAdmin must call `_acceptAdmin` to finalize the transfer."
+        },
+        "_setReserveFactor(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function _setReserveFactor(uint256 newReserveFactorMantissa) external nonpayable returns (uint256)",
+            "inputs": {
+                "newReserveFactorMantissa": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "accrues interest and sets a new reserve factor for the protocol using _setReserveFactorFresh",
+            "details": "Admin function to accrue interest and set a new reserve factor"
+        },
+        "accrualBlockNumber()": {
+            "stateMutability": "view",
+            "code": "function accrualBlockNumber() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "accrueInterest()": {
+            "stateMutability": "nonpayable",
+            "code": "function accrueInterest() external nonpayable returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "Applies accrued interest to total borrows and reserves",
+            "details": "This calculates interest accrued from the last checkpointed block  up to the current block and writes new checkpoint to storage."
+        },
+        "admin()": {
+            "stateMutability": "view",
+            "code": "function admin() external view returns (address payable)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address payable"
+                }
+            }
+        },
+        "allowance(address,address)": {
+            "stateMutability": "view",
+            "code": "function allowance(address owner, address spender) external view returns (uint256)",
+            "inputs": {
+                "owner": {
+                    "type": "address",
+                    "description": "The address of the account which owns the tokens to be spent"
+                },
+                "spender": {
+                    "type": "address",
+                    "description": "The address of the account which may transfer tokens"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "Get the current allowance from `owner` for `spender`"
+        },
+        "approve(address,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function approve(address spender, uint256 amount) external nonpayable returns (bool)",
+            "inputs": {
+                "spender": {
+                    "type": "address",
+                    "description": "The address of the account which may transfer tokens"
+                },
+                "amount": {
+                    "type": "uint256",
+                    "description": "The number of tokens that are approved (-1 means infinite)"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            },
+            "notice": "Approve `spender` to transfer up to `amount` from `src`",
+            "details": "This will overwrite the approval amount for `spender` and is subject to issues noted [here](https://eips.ethereum.org/EIPS/eip-20#approve)"
+        },
+        "balanceOf(address)": {
+            "stateMutability": "view",
+            "code": "function balanceOf(address owner) external view returns (uint256)",
+            "inputs": {
+                "owner": {
+                    "type": "address",
+                    "description": "The address of the account to query"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "Get the token balance of the `owner`"
+        },
+        "balanceOfUnderlying(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function balanceOfUnderlying(address owner) external nonpayable returns (uint256)",
+            "inputs": {
+                "owner": {
+                    "type": "address",
+                    "description": "The address of the account to query"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "Get the underlying balance of the `owner`",
+            "details": "This also accrues interest in a transaction"
+        },
+        "borrow(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function borrow(uint256 borrowAmount) external nonpayable returns (uint256)",
+            "inputs": {
+                "borrowAmount": {
+                    "type": "uint256",
+                    "description": "The amount of the underlying asset to borrow"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "Sender borrows assets from the protocol to their own address"
+        },
+        "borrowBalanceCurrent(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function borrowBalanceCurrent(address account) external nonpayable returns (uint256)",
+            "inputs": {
+                "account": {
+                    "type": "address",
+                    "description": "The address whose balance should be calculated after updating borrowIndex"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "Accrue interest to updated borrowIndex and then calculate account's borrow balance using the updated borrowIndex"
+        },
+        "borrowBalanceStored(address)": {
+            "stateMutability": "view",
+            "code": "function borrowBalanceStored(address account) external view returns (uint256)",
+            "inputs": {
+                "account": {
+                    "type": "address",
+                    "description": "The address whose balance should be calculated"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "Return the borrow balance of account based on stored data"
+        },
+        "borrowIndex()": {
+            "stateMutability": "view",
+            "code": "function borrowIndex() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "borrowRatePerBlock()": {
+            "stateMutability": "view",
+            "code": "function borrowRatePerBlock() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "Returns the current per-block borrow interest rate for this cToken"
+        },
+        "comptroller()": {
+            "stateMutability": "view",
+            "code": "function comptroller() external view returns (contract ComptrollerInterface)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "contract ComptrollerInterface"
+                }
+            }
+        },
+        "decimals()": {
+            "stateMutability": "view",
+            "code": "function decimals() external view returns (uint8)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint8"
+                }
+            }
+        },
+        "exchangeRateCurrent()": {
+            "stateMutability": "nonpayable",
+            "code": "function exchangeRateCurrent() external nonpayable returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "Accrue interest then return the up-to-date exchange rate"
+        },
+        "exchangeRateStored()": {
+            "stateMutability": "view",
+            "code": "function exchangeRateStored() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "Calculates the exchange rate from the underlying to the CToken",
+            "details": "This function does not accrue interest before calculating the exchange rate"
+        },
+        "getAccountSnapshot(address)": {
+            "stateMutability": "view",
+            "code": "function getAccountSnapshot(address account) external view returns (uint256, uint256, uint256, uint256)",
+            "inputs": {
+                "account": {
+                    "type": "address",
+                    "description": "Address of the account to snapshot"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                },
+                "_1": {
+                    "type": "uint256"
+                },
+                "_2": {
+                    "type": "uint256"
+                },
+                "_3": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "Get a snapshot of the account's balances, and the cached exchange rate",
+            "details": "This is used by comptroller to more efficiently perform liquidity checks."
+        },
+        "getCash()": {
+            "stateMutability": "view",
+            "code": "function getCash() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "Get cash balance of this cToken in the underlying asset"
+        },
+        "initialize(address,address,uint256,string,string,uint8)": {
+            "stateMutability": "nonpayable",
+            "code": "function initialize(contract ComptrollerInterface comptroller_, contract InterestRateModel interestRateModel_, uint256 initialExchangeRateMantissa_, string name_, string symbol_, uint8 decimals_) external nonpayable",
+            "inputs": {
+                "comptroller_": {
+                    "type": "contract ComptrollerInterface",
+                    "description": "The address of the Comptroller"
+                },
+                "interestRateModel_": {
+                    "type": "contract InterestRateModel",
+                    "description": "The address of the interest rate model"
+                },
+                "initialExchangeRateMantissa_": {
+                    "type": "uint256",
+                    "description": "The initial exchange rate, scaled by 1e18"
+                },
+                "name_": {
+                    "type": "string",
+                    "description": "EIP-20 name of this token"
+                },
+                "symbol_": {
+                    "type": "string",
+                    "description": "EIP-20 symbol of this token"
+                },
+                "decimals_": {
+                    "type": "uint8",
+                    "description": "EIP-20 decimal precision of this token"
+                }
+            },
+            "outputs": {},
+            "notice": "Initialize the money market"
+        },
+        "interestRateModel()": {
+            "stateMutability": "view",
+            "code": "function interestRateModel() external view returns (contract InterestRateModel)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "contract InterestRateModel"
+                }
+            }
+        },
+        "isCToken()": {
+            "stateMutability": "view",
+            "code": "function isCToken() external view returns (bool)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            }
+        },
+        "liquidateBorrow(address,address)": {
+            "stateMutability": "payable",
+            "code": "function liquidateBorrow(address borrower, contract CToken cTokenCollateral) external payable",
+            "inputs": {
+                "borrower": {
+                    "type": "address",
+                    "description": "The borrower of this cToken to be liquidated"
+                },
+                "cTokenCollateral": {
+                    "type": "contract CToken",
+                    "description": "The market in which to seize collateral from the borrower"
+                }
+            },
+            "outputs": {},
+            "notice": "The sender liquidates the borrowers collateral. The collateral seized is transferred to the liquidator.",
+            "details": "Reverts upon any failure"
+        },
+        "mint()": {
+            "stateMutability": "payable",
+            "code": "function mint() external payable",
+            "inputs": {},
+            "outputs": {},
+            "notice": "Sender supplies assets into the market and receives cTokens in exchange",
+            "details": "Reverts upon any failure"
+        },
+        "name()": {
+            "stateMutability": "view",
+            "code": "function name() external view returns (string)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "string"
+                }
+            }
+        },
+        "pendingAdmin()": {
+            "stateMutability": "view",
+            "code": "function pendingAdmin() external view returns (address payable)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address payable"
+                }
+            }
+        },
+        "protocolSeizeShareMantissa()": {
+            "stateMutability": "view",
+            "code": "function protocolSeizeShareMantissa() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "redeem(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function redeem(uint256 redeemTokens) external nonpayable returns (uint256)",
+            "inputs": {
+                "redeemTokens": {
+                    "type": "uint256",
+                    "description": "The number of cTokens to redeem into underlying"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "Sender redeems cTokens in exchange for the underlying asset",
+            "details": "Accrues interest whether or not the operation succeeds, unless reverted"
+        },
+        "redeemUnderlying(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function redeemUnderlying(uint256 redeemAmount) external nonpayable returns (uint256)",
+            "inputs": {
+                "redeemAmount": {
+                    "type": "uint256",
+                    "description": "The amount of underlying to redeem"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "Sender redeems cTokens in exchange for a specified amount of underlying asset",
+            "details": "Accrues interest whether or not the operation succeeds, unless reverted"
+        },
+        "repayBorrow()": {
+            "stateMutability": "payable",
+            "code": "function repayBorrow() external payable",
+            "inputs": {},
+            "outputs": {},
+            "notice": "Sender repays their own borrow",
+            "details": "Reverts upon any failure"
+        },
+        "repayBorrowBehalf(address)": {
+            "stateMutability": "payable",
+            "code": "function repayBorrowBehalf(address borrower) external payable",
+            "inputs": {
+                "borrower": {
+                    "type": "address",
+                    "description": "the account with the debt being payed off"
+                }
+            },
+            "outputs": {},
+            "notice": "Sender repays a borrow belonging to borrower",
+            "details": "Reverts upon any failure"
+        },
+        "reserveFactorMantissa()": {
+            "stateMutability": "view",
+            "code": "function reserveFactorMantissa() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "seize(address,address,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function seize(address liquidator, address borrower, uint256 seizeTokens) external nonpayable returns (uint256)",
+            "inputs": {
+                "liquidator": {
+                    "type": "address",
+                    "description": "The account receiving seized collateral"
+                },
+                "borrower": {
+                    "type": "address",
+                    "description": "The account having collateral seized"
+                },
+                "seizeTokens": {
+                    "type": "uint256",
+                    "description": "The number of cTokens to seize"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "Transfers collateral tokens (this market) to the liquidator.",
+            "details": "Will fail unless called by another cToken during the process of liquidation. Its absolutely critical to use msg.sender as the borrowed cToken and not a parameter."
+        },
+        "supplyRatePerBlock()": {
+            "stateMutability": "view",
+            "code": "function supplyRatePerBlock() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "Returns the current per-block supply interest rate for this cToken"
+        },
+        "symbol()": {
+            "stateMutability": "view",
+            "code": "function symbol() external view returns (string)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "string"
+                }
+            }
+        },
+        "totalBorrows()": {
+            "stateMutability": "view",
+            "code": "function totalBorrows() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "totalBorrowsCurrent()": {
+            "stateMutability": "nonpayable",
+            "code": "function totalBorrowsCurrent() external nonpayable returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "Returns the current total borrows plus accrued interest"
+        },
+        "totalReserves()": {
+            "stateMutability": "view",
+            "code": "function totalReserves() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "totalSupply()": {
+            "stateMutability": "view",
+            "code": "function totalSupply() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "transfer(address,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function transfer(address dst, uint256 amount) external nonpayable returns (bool)",
+            "inputs": {
+                "dst": {
+                    "type": "address",
+                    "description": "The address of the destination account"
+                },
+                "amount": {
+                    "type": "uint256",
+                    "description": "The number of tokens to transfer"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            },
+            "notice": "Transfer `amount` tokens from `msg.sender` to `dst`"
+        },
+        "transferFrom(address,address,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function transferFrom(address src, address dst, uint256 amount) external nonpayable returns (bool)",
+            "inputs": {
+                "src": {
+                    "type": "address",
+                    "description": "The address of the source account"
+                },
+                "dst": {
+                    "type": "address",
+                    "description": "The address of the destination account"
+                },
+                "amount": {
+                    "type": "uint256",
+                    "description": "The number of tokens to transfer"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            },
+            "notice": "Transfer `amount` tokens from `src` to `dst`"
+        }
+    },
+    "events": {
+        "AccrueInterest": {
+            "code": "event AccrueInterest(uint256 cashPrior, uint256 interestAccumulated, uint256 borrowIndex, uint256 totalBorrows)",
+            "inputs": {
+                "cashPrior": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "interestAccumulated": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "borrowIndex": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "totalBorrows": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "Approval": {
+            "code": "event Approval(address indexed owner, address indexed spender, uint256 amount)",
+            "inputs": {
+                "owner": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "spender": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "amount": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "Borrow": {
+            "code": "event Borrow(address borrower, uint256 borrowAmount, uint256 accountBorrows, uint256 totalBorrows)",
+            "inputs": {
+                "borrower": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "borrowAmount": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "accountBorrows": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "totalBorrows": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "Failure": {
+            "code": "event Failure(uint256 error, uint256 info, uint256 detail)",
+            "inputs": {
+                "error": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "info": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "detail": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "LiquidateBorrow": {
+            "code": "event LiquidateBorrow(address liquidator, address borrower, uint256 repayAmount, address cTokenCollateral, uint256 seizeTokens)",
+            "inputs": {
+                "liquidator": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "borrower": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "repayAmount": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "cTokenCollateral": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "seizeTokens": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "Mint": {
+            "code": "event Mint(address minter, uint256 mintAmount, uint256 mintTokens)",
+            "inputs": {
+                "minter": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "mintAmount": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "mintTokens": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "NewAdmin": {
+            "code": "event NewAdmin(address oldAdmin, address newAdmin)",
+            "inputs": {
+                "oldAdmin": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "newAdmin": {
+                    "type": "address",
+                    "indexed": false
+                }
+            }
+        },
+        "NewComptroller": {
+            "code": "event NewComptroller(contract ComptrollerInterface oldComptroller, contract ComptrollerInterface newComptroller)",
+            "inputs": {
+                "oldComptroller": {
+                    "type": "contract ComptrollerInterface",
+                    "indexed": false
+                },
+                "newComptroller": {
+                    "type": "contract ComptrollerInterface",
+                    "indexed": false
+                }
+            }
+        },
+        "NewMarketInterestRateModel": {
+            "code": "event NewMarketInterestRateModel(contract InterestRateModel oldInterestRateModel, contract InterestRateModel newInterestRateModel)",
+            "inputs": {
+                "oldInterestRateModel": {
+                    "type": "contract InterestRateModel",
+                    "indexed": false
+                },
+                "newInterestRateModel": {
+                    "type": "contract InterestRateModel",
+                    "indexed": false
+                }
+            }
+        },
+        "NewPendingAdmin": {
+            "code": "event NewPendingAdmin(address oldPendingAdmin, address newPendingAdmin)",
+            "inputs": {
+                "oldPendingAdmin": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "newPendingAdmin": {
+                    "type": "address",
+                    "indexed": false
+                }
+            }
+        },
+        "NewReserveFactor": {
+            "code": "event NewReserveFactor(uint256 oldReserveFactorMantissa, uint256 newReserveFactorMantissa)",
+            "inputs": {
+                "oldReserveFactorMantissa": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "newReserveFactorMantissa": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "Redeem": {
+            "code": "event Redeem(address redeemer, uint256 redeemAmount, uint256 redeemTokens)",
+            "inputs": {
+                "redeemer": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "redeemAmount": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "redeemTokens": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "RepayBorrow": {
+            "code": "event RepayBorrow(address payer, address borrower, uint256 repayAmount, uint256 accountBorrows, uint256 totalBorrows)",
+            "inputs": {
+                "payer": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "borrower": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "repayAmount": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "accountBorrows": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "totalBorrows": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "ReservesAdded": {
+            "code": "event ReservesAdded(address benefactor, uint256 addAmount, uint256 newTotalReserves)",
+            "inputs": {
+                "benefactor": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "addAmount": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "newTotalReserves": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "ReservesReduced": {
+            "code": "event ReservesReduced(address admin, uint256 reduceAmount, uint256 newTotalReserves)",
+            "inputs": {
+                "admin": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "reduceAmount": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "newTotalReserves": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "Transfer": {
+            "code": "event Transfer(address indexed from, address indexed to, uint256 amount)",
+            "inputs": {
+                "from": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "to": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "amount": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        }
+    },
+    "errors": {},
+    "path": "",
+    "title": "Compound's CEther Contract",
+    "notice": "CToken which wraps Ether",
+    "author": "Compound",
+    "name": "CEther"
+}

@@ -1,0 +1,831 @@
+{
+    "methods": {
+        "BALLOT_TYPEHASH()": {
+            "stateMutability": "view",
+            "code": "function BALLOT_TYPEHASH() external view returns (bytes32)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "bytes32"
+                }
+            }
+        },
+        "DOMAIN_TYPEHASH()": {
+            "stateMutability": "view",
+            "code": "function DOMAIN_TYPEHASH() external view returns (bytes32)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "bytes32"
+                }
+            }
+        },
+        "MAX_PROPOSAL_THRESHOLD()": {
+            "stateMutability": "view",
+            "code": "function MAX_PROPOSAL_THRESHOLD() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "MAX_VOTING_DELAY()": {
+            "stateMutability": "view",
+            "code": "function MAX_VOTING_DELAY() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "MAX_VOTING_PERIOD()": {
+            "stateMutability": "view",
+            "code": "function MAX_VOTING_PERIOD() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "MIN_PROPOSAL_THRESHOLD()": {
+            "stateMutability": "view",
+            "code": "function MIN_PROPOSAL_THRESHOLD() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "MIN_VOTING_DELAY()": {
+            "stateMutability": "view",
+            "code": "function MIN_VOTING_DELAY() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "MIN_VOTING_PERIOD()": {
+            "stateMutability": "view",
+            "code": "function MIN_VOTING_PERIOD() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "_acceptAdmin()": {
+            "stateMutability": "nonpayable",
+            "code": "function _acceptAdmin() external nonpayable",
+            "inputs": {},
+            "outputs": {},
+            "notice": "Accepts transfer of admin rights. msg.sender must be pendingAdmin",
+            "details": "Admin function for pending admin to accept role and update admin"
+        },
+        "_initiate(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function _initiate(address governorAlpha) external nonpayable",
+            "inputs": {
+                "governorAlpha": {
+                    "type": "address",
+                    "description": "The address for the Governor to continue the proposal id count from"
+                }
+            },
+            "outputs": {},
+            "notice": "Initiate the GovernorBravo contract",
+            "details": "Admin only. Sets initial proposal id which initiates the contract, ensuring a continuous proposal id count"
+        },
+        "_setPendingAdmin(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function _setPendingAdmin(address newPendingAdmin) external nonpayable",
+            "inputs": {
+                "newPendingAdmin": {
+                    "type": "address",
+                    "description": "New pending admin."
+                }
+            },
+            "outputs": {},
+            "notice": "Begins transfer of admin rights. The newPendingAdmin must call `_acceptAdmin` to finalize the transfer.",
+            "details": "Admin function to begin change of admin. The newPendingAdmin must call `_acceptAdmin` to finalize the transfer."
+        },
+        "_setProposalThreshold(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function _setProposalThreshold(uint256 newProposalThreshold) external nonpayable",
+            "inputs": {
+                "newProposalThreshold": {
+                    "type": "uint256",
+                    "description": "new proposal threshold"
+                }
+            },
+            "outputs": {},
+            "notice": "Admin function for setting the proposal threshold",
+            "details": "newProposalThreshold must be greater than the hardcoded min"
+        },
+        "_setVotingDelay(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function _setVotingDelay(uint256 newVotingDelay) external nonpayable",
+            "inputs": {
+                "newVotingDelay": {
+                    "type": "uint256",
+                    "description": "new voting delay, in blocks"
+                }
+            },
+            "outputs": {},
+            "notice": "Admin function for setting the voting delay"
+        },
+        "_setVotingPeriod(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function _setVotingPeriod(uint256 newVotingPeriod) external nonpayable",
+            "inputs": {
+                "newVotingPeriod": {
+                    "type": "uint256",
+                    "description": "new voting period, in blocks"
+                }
+            },
+            "outputs": {},
+            "notice": "Admin function for setting the voting period"
+        },
+        "_setWhitelistAccountExpiration(address,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function _setWhitelistAccountExpiration(address account, uint256 expiration) external nonpayable",
+            "inputs": {
+                "account": {
+                    "type": "address",
+                    "description": "Account address to set whitelist expiration for"
+                },
+                "expiration": {
+                    "type": "uint256",
+                    "description": "Expiration for account whitelist status as timestamp (if now < expiration, whitelisted)"
+                }
+            },
+            "outputs": {},
+            "notice": "Admin function for setting the whitelist expiration as a timestamp for an account. Whitelist status allows accounts to propose without meeting threshold"
+        },
+        "_setWhitelistGuardian(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function _setWhitelistGuardian(address account) external nonpayable",
+            "inputs": {
+                "account": {
+                    "type": "address",
+                    "description": "Account to set whitelistGuardian to (0x0 to remove whitelistGuardian)"
+                }
+            },
+            "outputs": {},
+            "notice": "Admin function for setting the whitelistGuardian. WhitelistGuardian can cancel proposals from whitelisted addresses"
+        },
+        "admin()": {
+            "stateMutability": "view",
+            "code": "function admin() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            }
+        },
+        "cancel(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function cancel(uint256 proposalId) external nonpayable",
+            "inputs": {
+                "proposalId": {
+                    "type": "uint256",
+                    "description": "The id of the proposal to cancel"
+                }
+            },
+            "outputs": {},
+            "notice": "Cancels a proposal only if sender is the proposer, or proposer delegates dropped below proposal threshold"
+        },
+        "castVote(uint256,uint8)": {
+            "stateMutability": "nonpayable",
+            "code": "function castVote(uint256 proposalId, uint8 support) external nonpayable",
+            "inputs": {
+                "proposalId": {
+                    "type": "uint256",
+                    "description": "The id of the proposal to vote on"
+                },
+                "support": {
+                    "type": "uint8",
+                    "description": "The support value for the vote. 0=against, 1=for, 2=abstain"
+                }
+            },
+            "outputs": {},
+            "notice": "Cast a vote for a proposal"
+        },
+        "castVoteBySig(uint256,uint8,uint8,bytes32,bytes32)": {
+            "stateMutability": "nonpayable",
+            "code": "function castVoteBySig(uint256 proposalId, uint8 support, uint8 v, bytes32 r, bytes32 s) external nonpayable",
+            "inputs": {
+                "proposalId": {
+                    "type": "uint256"
+                },
+                "support": {
+                    "type": "uint8"
+                },
+                "v": {
+                    "type": "uint8"
+                },
+                "r": {
+                    "type": "bytes32"
+                },
+                "s": {
+                    "type": "bytes32"
+                }
+            },
+            "outputs": {},
+            "notice": "Cast a vote for a proposal by signature",
+            "details": "External function that accepts EIP-712 signatures for voting on proposals."
+        },
+        "castVoteWithReason(uint256,uint8,string)": {
+            "stateMutability": "nonpayable",
+            "code": "function castVoteWithReason(uint256 proposalId, uint8 support, string reason) external nonpayable",
+            "inputs": {
+                "proposalId": {
+                    "type": "uint256",
+                    "description": "The id of the proposal to vote on"
+                },
+                "support": {
+                    "type": "uint8",
+                    "description": "The support value for the vote. 0=against, 1=for, 2=abstain"
+                },
+                "reason": {
+                    "type": "string",
+                    "description": "The reason given for the vote by the voter"
+                }
+            },
+            "outputs": {},
+            "notice": "Cast a vote for a proposal with a reason"
+        },
+        "comp()": {
+            "stateMutability": "view",
+            "code": "function comp() external view returns (contract CompInterface)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "contract CompInterface"
+                }
+            }
+        },
+        "execute(uint256)": {
+            "stateMutability": "payable",
+            "code": "function execute(uint256 proposalId) external payable",
+            "inputs": {
+                "proposalId": {
+                    "type": "uint256",
+                    "description": "The id of the proposal to execute"
+                }
+            },
+            "outputs": {},
+            "notice": "Executes a queued proposal if eta has passed"
+        },
+        "getActions(uint256)": {
+            "stateMutability": "view",
+            "code": "function getActions(uint256 proposalId) external view returns (address[] targets, uint256[] values, string[] signatures, bytes[] calldatas)",
+            "inputs": {
+                "proposalId": {
+                    "type": "uint256",
+                    "description": "the id of the proposal"
+                }
+            },
+            "outputs": {
+                "targets": {
+                    "type": "address[]"
+                },
+                "values": {
+                    "type": "uint256[]"
+                },
+                "signatures": {
+                    "type": "string[]"
+                },
+                "calldatas": {
+                    "type": "bytes[]"
+                }
+            },
+            "notice": "Gets actions of a proposal"
+        },
+        "getReceipt(uint256,address)": {
+            "stateMutability": "view",
+            "code": "function getReceipt(uint256 proposalId, address voter) external view returns (struct GovernorBravoDelegateStorageV1.Receipt)",
+            "inputs": {
+                "proposalId": {
+                    "type": "uint256",
+                    "description": "the id of proposal"
+                },
+                "voter": {
+                    "type": "address",
+                    "description": "The address of the voter"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "GovernorBravoDelegateStorageV1.Receipt"
+                }
+            },
+            "notice": "Gets the receipt for a voter on a given proposal"
+        },
+        "implementation()": {
+            "stateMutability": "view",
+            "code": "function implementation() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            }
+        },
+        "initialProposalId()": {
+            "stateMutability": "view",
+            "code": "function initialProposalId() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "initialize(address,address,uint256,uint256,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function initialize(address timelock_, address comp_, uint256 votingPeriod_, uint256 votingDelay_, uint256 proposalThreshold_) external nonpayable",
+            "inputs": {
+                "timelock_": {
+                    "type": "address",
+                    "description": "The address of the Timelock"
+                },
+                "comp_": {
+                    "type": "address",
+                    "description": "The address of the COMP token"
+                },
+                "votingPeriod_": {
+                    "type": "uint256",
+                    "description": "The initial voting period"
+                },
+                "votingDelay_": {
+                    "type": "uint256",
+                    "description": "The initial voting delay"
+                },
+                "proposalThreshold_": {
+                    "type": "uint256",
+                    "description": "The initial proposal threshold"
+                }
+            },
+            "outputs": {},
+            "notice": "Used to initialize the contract during delegator contructor"
+        },
+        "isWhitelisted(address)": {
+            "stateMutability": "view",
+            "code": "function isWhitelisted(address account) external view returns (bool)",
+            "inputs": {
+                "account": {
+                    "type": "address",
+                    "description": "Account to check white list status of"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            },
+            "notice": "View function which returns if an account is whitelisted"
+        },
+        "latestProposalIds(address)": {
+            "stateMutability": "view",
+            "code": "function latestProposalIds(address) external view returns (uint256)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "name()": {
+            "stateMutability": "view",
+            "code": "function name() external view returns (string)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "string"
+                }
+            }
+        },
+        "pendingAdmin()": {
+            "stateMutability": "view",
+            "code": "function pendingAdmin() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            }
+        },
+        "proposalCount()": {
+            "stateMutability": "view",
+            "code": "function proposalCount() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "proposalMaxOperations()": {
+            "stateMutability": "view",
+            "code": "function proposalMaxOperations() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "proposalThreshold()": {
+            "stateMutability": "view",
+            "code": "function proposalThreshold() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "proposals(uint256)": {
+            "stateMutability": "view",
+            "code": "function proposals(uint256) external view returns (uint256 id, address proposer, uint256 eta, uint256 startBlock, uint256 endBlock, uint256 forVotes, uint256 againstVotes, uint256 abstainVotes, bool canceled, bool executed)",
+            "inputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "id": {
+                    "type": "uint256"
+                },
+                "proposer": {
+                    "type": "address"
+                },
+                "eta": {
+                    "type": "uint256"
+                },
+                "startBlock": {
+                    "type": "uint256"
+                },
+                "endBlock": {
+                    "type": "uint256"
+                },
+                "forVotes": {
+                    "type": "uint256"
+                },
+                "againstVotes": {
+                    "type": "uint256"
+                },
+                "abstainVotes": {
+                    "type": "uint256"
+                },
+                "canceled": {
+                    "type": "bool"
+                },
+                "executed": {
+                    "type": "bool"
+                }
+            }
+        },
+        "propose(address[],uint256[],string[],bytes[],string)": {
+            "stateMutability": "nonpayable",
+            "code": "function propose(address[] targets, uint256[] values, string[] signatures, bytes[] calldatas, string description) external nonpayable returns (uint256)",
+            "inputs": {
+                "targets": {
+                    "type": "address[]",
+                    "description": "Target addresses for proposal calls"
+                },
+                "values": {
+                    "type": "uint256[]",
+                    "description": "Eth values for proposal calls"
+                },
+                "signatures": {
+                    "type": "string[]",
+                    "description": "Function signatures for proposal calls"
+                },
+                "calldatas": {
+                    "type": "bytes[]",
+                    "description": "Calldatas for proposal calls"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "String description of the proposal"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "Function used to propose a new proposal. Sender must have delegates above the proposal threshold"
+        },
+        "queue(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function queue(uint256 proposalId) external nonpayable",
+            "inputs": {
+                "proposalId": {
+                    "type": "uint256",
+                    "description": "The id of the proposal to queue"
+                }
+            },
+            "outputs": {},
+            "notice": "Queues a proposal of state succeeded"
+        },
+        "quorumVotes()": {
+            "stateMutability": "view",
+            "code": "function quorumVotes() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "state(uint256)": {
+            "stateMutability": "view",
+            "code": "function state(uint256 proposalId) external view returns (enum GovernorBravoDelegateStorageV1.ProposalState)",
+            "inputs": {
+                "proposalId": {
+                    "type": "uint256",
+                    "description": "The id of the proposal"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "enum GovernorBravoDelegateStorageV1.ProposalState"
+                }
+            },
+            "notice": "Gets the state of a proposal"
+        },
+        "timelock()": {
+            "stateMutability": "view",
+            "code": "function timelock() external view returns (contract TimelockInterface)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "contract TimelockInterface"
+                }
+            }
+        },
+        "votingDelay()": {
+            "stateMutability": "view",
+            "code": "function votingDelay() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "votingPeriod()": {
+            "stateMutability": "view",
+            "code": "function votingPeriod() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "whitelistAccountExpirations(address)": {
+            "stateMutability": "view",
+            "code": "function whitelistAccountExpirations(address) external view returns (uint256)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "whitelistGuardian()": {
+            "stateMutability": "view",
+            "code": "function whitelistGuardian() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            }
+        }
+    },
+    "events": {
+        "NewAdmin": {
+            "code": "event NewAdmin(address oldAdmin, address newAdmin)",
+            "inputs": {
+                "oldAdmin": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "newAdmin": {
+                    "type": "address",
+                    "indexed": false
+                }
+            }
+        },
+        "NewImplementation": {
+            "code": "event NewImplementation(address oldImplementation, address newImplementation)",
+            "inputs": {
+                "oldImplementation": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "newImplementation": {
+                    "type": "address",
+                    "indexed": false
+                }
+            }
+        },
+        "NewPendingAdmin": {
+            "code": "event NewPendingAdmin(address oldPendingAdmin, address newPendingAdmin)",
+            "inputs": {
+                "oldPendingAdmin": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "newPendingAdmin": {
+                    "type": "address",
+                    "indexed": false
+                }
+            }
+        },
+        "ProposalCanceled": {
+            "code": "event ProposalCanceled(uint256 id)",
+            "inputs": {
+                "id": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "ProposalCreated": {
+            "code": "event ProposalCreated(uint256 id, address proposer, address[] targets, uint256[] values, string[] signatures, bytes[] calldatas, uint256 startBlock, uint256 endBlock, string description)",
+            "inputs": {
+                "id": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "proposer": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "targets": {
+                    "type": "address[]",
+                    "indexed": false
+                },
+                "values": {
+                    "type": "uint256[]",
+                    "indexed": false
+                },
+                "signatures": {
+                    "type": "string[]",
+                    "indexed": false
+                },
+                "calldatas": {
+                    "type": "bytes[]",
+                    "indexed": false
+                },
+                "startBlock": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "endBlock": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "description": {
+                    "type": "string",
+                    "indexed": false
+                }
+            }
+        },
+        "ProposalExecuted": {
+            "code": "event ProposalExecuted(uint256 id)",
+            "inputs": {
+                "id": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "ProposalQueued": {
+            "code": "event ProposalQueued(uint256 id, uint256 eta)",
+            "inputs": {
+                "id": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "eta": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "ProposalThresholdSet": {
+            "code": "event ProposalThresholdSet(uint256 oldProposalThreshold, uint256 newProposalThreshold)",
+            "inputs": {
+                "oldProposalThreshold": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "newProposalThreshold": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "VoteCast": {
+            "code": "event VoteCast(address indexed voter, uint256 proposalId, uint8 support, uint256 votes, string reason)",
+            "inputs": {
+                "voter": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "proposalId": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "support": {
+                    "type": "uint8",
+                    "indexed": false
+                },
+                "votes": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "reason": {
+                    "type": "string",
+                    "indexed": false
+                }
+            }
+        },
+        "VotingDelaySet": {
+            "code": "event VotingDelaySet(uint256 oldVotingDelay, uint256 newVotingDelay)",
+            "inputs": {
+                "oldVotingDelay": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "newVotingDelay": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "VotingPeriodSet": {
+            "code": "event VotingPeriodSet(uint256 oldVotingPeriod, uint256 newVotingPeriod)",
+            "inputs": {
+                "oldVotingPeriod": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "newVotingPeriod": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "WhitelistAccountExpirationSet": {
+            "code": "event WhitelistAccountExpirationSet(address account, uint256 expiration)",
+            "inputs": {
+                "account": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "expiration": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "WhitelistGuardianSet": {
+            "code": "event WhitelistGuardianSet(address oldGuardian, address newGuardian)",
+            "inputs": {
+                "oldGuardian": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "newGuardian": {
+                    "type": "address",
+                    "indexed": false
+                }
+            }
+        }
+    },
+    "errors": {},
+    "path": "/Governance",
+    "name": "GovernorBravoDelegate"
+}

@@ -1,0 +1,19 @@
+{
+    "methods": {
+        "proposalCount()": {
+            "stateMutability": "nonpayable",
+            "code": "function proposalCount() external nonpayable returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "The total number of proposals"
+        }
+    },
+    "events": {},
+    "errors": {},
+    "path": "/Governance",
+    "name": "GovernorAlpha"
+}

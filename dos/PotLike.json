@@ -1,0 +1,83 @@
+{
+    "methods": {
+        "chi()": {
+            "stateMutability": "view",
+            "code": "function chi() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "drip()": {
+            "stateMutability": "nonpayable",
+            "code": "function drip() external nonpayable returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "dsr()": {
+            "stateMutability": "view",
+            "code": "function dsr() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "exit(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function exit(uint256) external nonpayable",
+            "inputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {}
+        },
+        "join(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function join(uint256) external nonpayable",
+            "inputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {}
+        },
+        "pie(address)": {
+            "stateMutability": "view",
+            "code": "function pie(address) external view returns (uint256)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "rho()": {
+            "stateMutability": "view",
+            "code": "function rho() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        }
+    },
+    "events": {},
+    "errors": {},
+    "path": "",
+    "notice": "* Maker Interfaces **",
+    "name": "PotLike"
+}

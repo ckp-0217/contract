@@ -1,0 +1,75 @@
+{
+    "methods": {
+        "getBorrowRate(uint256,uint256,uint256)": {
+            "stateMutability": "view",
+            "code": "function getBorrowRate(uint256 cash, uint256 borrows, uint256 reserves) external view returns (uint256, uint256)",
+            "inputs": {
+                "cash": {
+                    "type": "uint256",
+                    "description": "The total amount of cash the market has"
+                },
+                "borrows": {
+                    "type": "uint256",
+                    "description": "The total amount of borrows the market has outstanding"
+                },
+                "reserves": {
+                    "type": "uint256",
+                    "description": "The total amount of reserves the market has"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                },
+                "_1": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "Calculates the current borrow interest rate per block"
+        },
+        "getSupplyRate(uint256,uint256,uint256,uint256)": {
+            "stateMutability": "view",
+            "code": "function getSupplyRate(uint256 cash, uint256 borrows, uint256 reserves, uint256 reserveFactorMantissa) external view returns (uint256)",
+            "inputs": {
+                "cash": {
+                    "type": "uint256",
+                    "description": "The total amount of cash the market has"
+                },
+                "borrows": {
+                    "type": "uint256",
+                    "description": "The total amount of borrows the market has outstanding"
+                },
+                "reserves": {
+                    "type": "uint256",
+                    "description": "The total amount of reserves the market has"
+                },
+                "reserveFactorMantissa": {
+                    "type": "uint256",
+                    "description": "The current reserve factor the market has"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "Calculates the current supply interest rate per block"
+        },
+        "isInterestRateModel()": {
+            "stateMutability": "view",
+            "code": "function isInterestRateModel() external view returns (bool)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            }
+        }
+    },
+    "events": {},
+    "errors": {},
+    "path": "",
+    "title": "Compound's Legacy InterestRateModel Interface",
+    "author": "Compound (modified by Arr00)",
+    "name": "LegacyInterestRateModel"
+}

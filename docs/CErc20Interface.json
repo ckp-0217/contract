@@ -1,0 +1,151 @@
+{
+    "methods": {
+        "_addReserves(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function _addReserves(uint256 addAmount) external nonpayable returns (uint256)",
+            "inputs": {
+                "addAmount": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "* Admin Functions **"
+        },
+        "borrow(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function borrow(uint256 borrowAmount) external nonpayable returns (uint256)",
+            "inputs": {
+                "borrowAmount": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "liquidateBorrow(address,uint256,address)": {
+            "stateMutability": "nonpayable",
+            "code": "function liquidateBorrow(address borrower, uint256 repayAmount, contract CTokenInterface cTokenCollateral) external nonpayable returns (uint256)",
+            "inputs": {
+                "borrower": {
+                    "type": "address"
+                },
+                "repayAmount": {
+                    "type": "uint256"
+                },
+                "cTokenCollateral": {
+                    "type": "contract CTokenInterface"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "mint(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function mint(uint256 mintAmount) external nonpayable returns (uint256)",
+            "inputs": {
+                "mintAmount": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "* User Interface **"
+        },
+        "redeem(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function redeem(uint256 redeemTokens) external nonpayable returns (uint256)",
+            "inputs": {
+                "redeemTokens": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "redeemUnderlying(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function redeemUnderlying(uint256 redeemAmount) external nonpayable returns (uint256)",
+            "inputs": {
+                "redeemAmount": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "repayBorrow(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function repayBorrow(uint256 repayAmount) external nonpayable returns (uint256)",
+            "inputs": {
+                "repayAmount": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "repayBorrowBehalf(address,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function repayBorrowBehalf(address borrower, uint256 repayAmount) external nonpayable returns (uint256)",
+            "inputs": {
+                "borrower": {
+                    "type": "address"
+                },
+                "repayAmount": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "sweepToken(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function sweepToken(contract EIP20NonStandardInterface token) external nonpayable",
+            "inputs": {
+                "token": {
+                    "type": "contract EIP20NonStandardInterface"
+                }
+            },
+            "outputs": {}
+        },
+        "underlying()": {
+            "stateMutability": "view",
+            "code": "function underlying() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            }
+        }
+    },
+    "events": {},
+    "errors": {},
+    "path": "",
+    "name": "CErc20Interface"
+}

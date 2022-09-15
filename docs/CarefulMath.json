@@ -1,0 +1,10 @@
+{
+    "methods": {},
+    "events": {},
+    "errors": {},
+    "path": "",
+    "title": "Careful Math",
+    "notice": "Derived from OpenZeppelin's SafeMath library        https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/math/SafeMath.sol",
+    "author": "Compound",
+    "name": "CarefulMath"
+}

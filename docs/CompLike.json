@@ -1,0 +1,18 @@
+{
+    "methods": {
+        "delegate(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function delegate(address delegatee) external nonpayable",
+            "inputs": {
+                "delegatee": {
+                    "type": "address"
+                }
+            },
+            "outputs": {}
+        }
+    },
+    "events": {},
+    "errors": {},
+    "path": "",
+    "name": "CompLike"
+}

@@ -1,0 +1,18 @@
+{
+    "methods": {
+        "implementation()": {
+            "stateMutability": "view",
+            "code": "function implementation() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            }
+        }
+    },
+    "events": {},
+    "errors": {},
+    "path": "",
+    "name": "CDelegationStorage"
+}

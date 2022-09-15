@@ -1,0 +1,50 @@
+{
+    "methods": {
+        "cEther()": {
+            "stateMutability": "view",
+            "code": "function cEther() external view returns (contract CEther)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "contract CEther"
+                }
+            }
+        },
+        "repayBehalf(address)": {
+            "stateMutability": "payable",
+            "code": "function repayBehalf(address borrower) external payable",
+            "inputs": {
+                "borrower": {
+                    "type": "address",
+                    "description": "The address of the borrower account to repay on behalf of"
+                }
+            },
+            "outputs": {},
+            "notice": "msg.sender sends Ether to repay an account's borrow in the cEther market",
+            "details": "The provided Ether is applied towards the borrow balance, any excess is refunded"
+        },
+        "repayBehalfExplicit(address,address)": {
+            "stateMutability": "payable",
+            "code": "function repayBehalfExplicit(address borrower, contract CEther cEther_) external payable",
+            "inputs": {
+                "borrower": {
+                    "type": "address",
+                    "description": "The address of the borrower account to repay on behalf of"
+                },
+                "cEther_": {
+                    "type": "contract CEther",
+                    "description": "The address of the cEther contract to repay in"
+                }
+            },
+            "outputs": {},
+            "notice": "msg.sender sends Ether to repay an account's borrow in a cEther market",
+            "details": "The provided Ether is applied towards the borrow balance, any excess is refunded"
+        }
+    },
+    "events": {},
+    "errors": {},
+    "path": "",
+    "title": "Compound's Maximillion Contract",
+    "author": "Compound",
+    "name": "Maximillion"
+}

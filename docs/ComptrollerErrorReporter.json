@@ -1,0 +1,25 @@
+{
+    "methods": {},
+    "events": {
+        "Failure": {
+            "code": "event Failure(uint256 error, uint256 info, uint256 detail)",
+            "inputs": {
+                "error": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "info": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "detail": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        }
+    },
+    "errors": {},
+    "path": "",
+    "name": "ComptrollerErrorReporter"
+}

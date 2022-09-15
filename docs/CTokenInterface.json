@@ -1,0 +1,757 @@
+{
+    "methods": {
+        "_acceptAdmin()": {
+            "stateMutability": "nonpayable",
+            "code": "function _acceptAdmin() external nonpayable returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "_reduceReserves(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function _reduceReserves(uint256 reduceAmount) external nonpayable returns (uint256)",
+            "inputs": {
+                "reduceAmount": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "_setComptroller(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function _setComptroller(contract ComptrollerInterface newComptroller) external nonpayable returns (uint256)",
+            "inputs": {
+                "newComptroller": {
+                    "type": "contract ComptrollerInterface"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "_setInterestRateModel(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function _setInterestRateModel(contract InterestRateModel newInterestRateModel) external nonpayable returns (uint256)",
+            "inputs": {
+                "newInterestRateModel": {
+                    "type": "contract InterestRateModel"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "_setPendingAdmin(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function _setPendingAdmin(address payable newPendingAdmin) external nonpayable returns (uint256)",
+            "inputs": {
+                "newPendingAdmin": {
+                    "type": "address payable"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "* Admin Functions **"
+        },
+        "_setReserveFactor(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function _setReserveFactor(uint256 newReserveFactorMantissa) external nonpayable returns (uint256)",
+            "inputs": {
+                "newReserveFactorMantissa": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "accrualBlockNumber()": {
+            "stateMutability": "view",
+            "code": "function accrualBlockNumber() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "accrueInterest()": {
+            "stateMutability": "nonpayable",
+            "code": "function accrueInterest() external nonpayable returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "admin()": {
+            "stateMutability": "view",
+            "code": "function admin() external view returns (address payable)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address payable"
+                }
+            }
+        },
+        "allowance(address,address)": {
+            "stateMutability": "view",
+            "code": "function allowance(address owner, address spender) external view returns (uint256)",
+            "inputs": {
+                "owner": {
+                    "type": "address"
+                },
+                "spender": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "approve(address,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function approve(address spender, uint256 amount) external nonpayable returns (bool)",
+            "inputs": {
+                "spender": {
+                    "type": "address"
+                },
+                "amount": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            }
+        },
+        "balanceOf(address)": {
+            "stateMutability": "view",
+            "code": "function balanceOf(address owner) external view returns (uint256)",
+            "inputs": {
+                "owner": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "balanceOfUnderlying(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function balanceOfUnderlying(address owner) external nonpayable returns (uint256)",
+            "inputs": {
+                "owner": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "borrowBalanceCurrent(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function borrowBalanceCurrent(address account) external nonpayable returns (uint256)",
+            "inputs": {
+                "account": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "borrowBalanceStored(address)": {
+            "stateMutability": "view",
+            "code": "function borrowBalanceStored(address account) external view returns (uint256)",
+            "inputs": {
+                "account": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "borrowIndex()": {
+            "stateMutability": "view",
+            "code": "function borrowIndex() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "borrowRatePerBlock()": {
+            "stateMutability": "view",
+            "code": "function borrowRatePerBlock() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "comptroller()": {
+            "stateMutability": "view",
+            "code": "function comptroller() external view returns (contract ComptrollerInterface)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "contract ComptrollerInterface"
+                }
+            }
+        },
+        "decimals()": {
+            "stateMutability": "view",
+            "code": "function decimals() external view returns (uint8)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint8"
+                }
+            }
+        },
+        "exchangeRateCurrent()": {
+            "stateMutability": "nonpayable",
+            "code": "function exchangeRateCurrent() external nonpayable returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "exchangeRateStored()": {
+            "stateMutability": "view",
+            "code": "function exchangeRateStored() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "getAccountSnapshot(address)": {
+            "stateMutability": "view",
+            "code": "function getAccountSnapshot(address account) external view returns (uint256, uint256, uint256, uint256)",
+            "inputs": {
+                "account": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                },
+                "_1": {
+                    "type": "uint256"
+                },
+                "_2": {
+                    "type": "uint256"
+                },
+                "_3": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "getCash()": {
+            "stateMutability": "view",
+            "code": "function getCash() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "interestRateModel()": {
+            "stateMutability": "view",
+            "code": "function interestRateModel() external view returns (contract InterestRateModel)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "contract InterestRateModel"
+                }
+            }
+        },
+        "isCToken()": {
+            "stateMutability": "view",
+            "code": "function isCToken() external view returns (bool)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            }
+        },
+        "name()": {
+            "stateMutability": "view",
+            "code": "function name() external view returns (string)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "string"
+                }
+            }
+        },
+        "pendingAdmin()": {
+            "stateMutability": "view",
+            "code": "function pendingAdmin() external view returns (address payable)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address payable"
+                }
+            }
+        },
+        "protocolSeizeShareMantissa()": {
+            "stateMutability": "view",
+            "code": "function protocolSeizeShareMantissa() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "reserveFactorMantissa()": {
+            "stateMutability": "view",
+            "code": "function reserveFactorMantissa() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "seize(address,address,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function seize(address liquidator, address borrower, uint256 seizeTokens) external nonpayable returns (uint256)",
+            "inputs": {
+                "liquidator": {
+                    "type": "address"
+                },
+                "borrower": {
+                    "type": "address"
+                },
+                "seizeTokens": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "supplyRatePerBlock()": {
+            "stateMutability": "view",
+            "code": "function supplyRatePerBlock() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "symbol()": {
+            "stateMutability": "view",
+            "code": "function symbol() external view returns (string)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "string"
+                }
+            }
+        },
+        "totalBorrows()": {
+            "stateMutability": "view",
+            "code": "function totalBorrows() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "totalBorrowsCurrent()": {
+            "stateMutability": "nonpayable",
+            "code": "function totalBorrowsCurrent() external nonpayable returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "totalReserves()": {
+            "stateMutability": "view",
+            "code": "function totalReserves() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "totalSupply()": {
+            "stateMutability": "view",
+            "code": "function totalSupply() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "transfer(address,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function transfer(address dst, uint256 amount) external nonpayable returns (bool)",
+            "inputs": {
+                "dst": {
+                    "type": "address"
+                },
+                "amount": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            },
+            "notice": "* User Interface **"
+        },
+        "transferFrom(address,address,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function transferFrom(address src, address dst, uint256 amount) external nonpayable returns (bool)",
+            "inputs": {
+                "src": {
+                    "type": "address"
+                },
+                "dst": {
+                    "type": "address"
+                },
+                "amount": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            }
+        }
+    },
+    "events": {
+        "AccrueInterest": {
+            "code": "event AccrueInterest(uint256 cashPrior, uint256 interestAccumulated, uint256 borrowIndex, uint256 totalBorrows)",
+            "inputs": {
+                "cashPrior": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "interestAccumulated": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "borrowIndex": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "totalBorrows": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "Approval": {
+            "code": "event Approval(address indexed owner, address indexed spender, uint256 amount)",
+            "inputs": {
+                "owner": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "spender": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "amount": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "Borrow": {
+            "code": "event Borrow(address borrower, uint256 borrowAmount, uint256 accountBorrows, uint256 totalBorrows)",
+            "inputs": {
+                "borrower": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "borrowAmount": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "accountBorrows": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "totalBorrows": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "Failure": {
+            "code": "event Failure(uint256 error, uint256 info, uint256 detail)",
+            "inputs": {
+                "error": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "info": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "detail": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "LiquidateBorrow": {
+            "code": "event LiquidateBorrow(address liquidator, address borrower, uint256 repayAmount, address cTokenCollateral, uint256 seizeTokens)",
+            "inputs": {
+                "liquidator": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "borrower": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "repayAmount": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "cTokenCollateral": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "seizeTokens": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "Mint": {
+            "code": "event Mint(address minter, uint256 mintAmount, uint256 mintTokens)",
+            "inputs": {
+                "minter": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "mintAmount": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "mintTokens": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "NewAdmin": {
+            "code": "event NewAdmin(address oldAdmin, address newAdmin)",
+            "inputs": {
+                "oldAdmin": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "newAdmin": {
+                    "type": "address",
+                    "indexed": false
+                }
+            }
+        },
+        "NewComptroller": {
+            "code": "event NewComptroller(contract ComptrollerInterface oldComptroller, contract ComptrollerInterface newComptroller)",
+            "inputs": {
+                "oldComptroller": {
+                    "type": "contract ComptrollerInterface",
+                    "indexed": false
+                },
+                "newComptroller": {
+                    "type": "contract ComptrollerInterface",
+                    "indexed": false
+                }
+            }
+        },
+        "NewMarketInterestRateModel": {
+            "code": "event NewMarketInterestRateModel(contract InterestRateModel oldInterestRateModel, contract InterestRateModel newInterestRateModel)",
+            "inputs": {
+                "oldInterestRateModel": {
+                    "type": "contract InterestRateModel",
+                    "indexed": false
+                },
+                "newInterestRateModel": {
+                    "type": "contract InterestRateModel",
+                    "indexed": false
+                }
+            }
+        },
+        "NewPendingAdmin": {
+            "code": "event NewPendingAdmin(address oldPendingAdmin, address newPendingAdmin)",
+            "inputs": {
+                "oldPendingAdmin": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "newPendingAdmin": {
+                    "type": "address",
+                    "indexed": false
+                }
+            }
+        },
+        "NewReserveFactor": {
+            "code": "event NewReserveFactor(uint256 oldReserveFactorMantissa, uint256 newReserveFactorMantissa)",
+            "inputs": {
+                "oldReserveFactorMantissa": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "newReserveFactorMantissa": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "Redeem": {
+            "code": "event Redeem(address redeemer, uint256 redeemAmount, uint256 redeemTokens)",
+            "inputs": {
+                "redeemer": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "redeemAmount": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "redeemTokens": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "RepayBorrow": {
+            "code": "event RepayBorrow(address payer, address borrower, uint256 repayAmount, uint256 accountBorrows, uint256 totalBorrows)",
+            "inputs": {
+                "payer": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "borrower": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "repayAmount": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "accountBorrows": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "totalBorrows": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "ReservesAdded": {
+            "code": "event ReservesAdded(address benefactor, uint256 addAmount, uint256 newTotalReserves)",
+            "inputs": {
+                "benefactor": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "addAmount": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "newTotalReserves": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "ReservesReduced": {
+            "code": "event ReservesReduced(address admin, uint256 reduceAmount, uint256 newTotalReserves)",
+            "inputs": {
+                "admin": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "reduceAmount": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "newTotalReserves": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "Transfer": {
+            "code": "event Transfer(address indexed from, address indexed to, uint256 amount)",
+            "inputs": {
+                "from": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "to": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "amount": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        }
+    },
+    "errors": {},
+    "path": "",
+    "name": "CTokenInterface"
+}

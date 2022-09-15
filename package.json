@@ -9,6 +9,7 @@
     "hardhat": "^2.11.1"
   },
   "dependencies": {
+    "@primitivefi/hardhat-dodoc": "^0.2.3",
     "hardhat-abi-exporter": "^2.10.0"
   }
 }

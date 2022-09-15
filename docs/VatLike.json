@@ -1,0 +1,32 @@
+{
+    "methods": {
+        "dai(address)": {
+            "stateMutability": "view",
+            "code": "function dai(address) external view returns (uint256)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "hope(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function hope(address) external nonpayable",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {}
+        }
+    },
+    "events": {},
+    "errors": {},
+    "path": "",
+    "name": "VatLike"
+}

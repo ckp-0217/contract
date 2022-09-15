@@ -1,0 +1,148 @@
+{
+    "methods": {
+        "accrualBlockNumber()": {
+            "stateMutability": "view",
+            "code": "function accrualBlockNumber() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "admin()": {
+            "stateMutability": "view",
+            "code": "function admin() external view returns (address payable)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address payable"
+                }
+            }
+        },
+        "borrowIndex()": {
+            "stateMutability": "view",
+            "code": "function borrowIndex() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "comptroller()": {
+            "stateMutability": "view",
+            "code": "function comptroller() external view returns (contract ComptrollerInterface)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "contract ComptrollerInterface"
+                }
+            }
+        },
+        "decimals()": {
+            "stateMutability": "view",
+            "code": "function decimals() external view returns (uint8)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint8"
+                }
+            }
+        },
+        "interestRateModel()": {
+            "stateMutability": "view",
+            "code": "function interestRateModel() external view returns (contract InterestRateModel)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "contract InterestRateModel"
+                }
+            }
+        },
+        "name()": {
+            "stateMutability": "view",
+            "code": "function name() external view returns (string)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "string"
+                }
+            }
+        },
+        "pendingAdmin()": {
+            "stateMutability": "view",
+            "code": "function pendingAdmin() external view returns (address payable)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address payable"
+                }
+            }
+        },
+        "protocolSeizeShareMantissa()": {
+            "stateMutability": "view",
+            "code": "function protocolSeizeShareMantissa() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "reserveFactorMantissa()": {
+            "stateMutability": "view",
+            "code": "function reserveFactorMantissa() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "symbol()": {
+            "stateMutability": "view",
+            "code": "function symbol() external view returns (string)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "string"
+                }
+            }
+        },
+        "totalBorrows()": {
+            "stateMutability": "view",
+            "code": "function totalBorrows() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "totalReserves()": {
+            "stateMutability": "view",
+            "code": "function totalReserves() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "totalSupply()": {
+            "stateMutability": "view",
+            "code": "function totalSupply() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        }
+    },
+    "events": {},
+    "errors": {},
+    "path": "",
+    "name": "CTokenStorage"
+}

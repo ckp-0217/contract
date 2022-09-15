@@ -1,0 +1,403 @@
+{
+    "methods": {
+        "_borrowGuardianPaused()": {
+            "stateMutability": "view",
+            "code": "function _borrowGuardianPaused() external view returns (bool)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            }
+        },
+        "_mintGuardianPaused()": {
+            "stateMutability": "view",
+            "code": "function _mintGuardianPaused() external view returns (bool)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            }
+        },
+        "accountAssets(address,uint256)": {
+            "stateMutability": "view",
+            "code": "function accountAssets(address, uint256) external view returns (contract CToken)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                },
+                "_1": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "contract CToken"
+                }
+            }
+        },
+        "admin()": {
+            "stateMutability": "view",
+            "code": "function admin() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            }
+        },
+        "allMarkets(uint256)": {
+            "stateMutability": "view",
+            "code": "function allMarkets(uint256) external view returns (contract CToken)",
+            "inputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "contract CToken"
+                }
+            }
+        },
+        "borrowCapGuardian()": {
+            "stateMutability": "view",
+            "code": "function borrowCapGuardian() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            }
+        },
+        "borrowCaps(address)": {
+            "stateMutability": "view",
+            "code": "function borrowCaps(address) external view returns (uint256)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "borrowGuardianPaused(address)": {
+            "stateMutability": "view",
+            "code": "function borrowGuardianPaused(address) external view returns (bool)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            }
+        },
+        "closeFactorMantissa()": {
+            "stateMutability": "view",
+            "code": "function closeFactorMantissa() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "compAccrued(address)": {
+            "stateMutability": "view",
+            "code": "function compAccrued(address) external view returns (uint256)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "compBorrowSpeeds(address)": {
+            "stateMutability": "view",
+            "code": "function compBorrowSpeeds(address) external view returns (uint256)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "compBorrowState(address)": {
+            "stateMutability": "view",
+            "code": "function compBorrowState(address) external view returns (uint224 index, uint32 block)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "index": {
+                    "type": "uint224"
+                },
+                "block": {
+                    "type": "uint32"
+                }
+            }
+        },
+        "compBorrowerIndex(address,address)": {
+            "stateMutability": "view",
+            "code": "function compBorrowerIndex(address, address) external view returns (uint256)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                },
+                "_1": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "compContributorSpeeds(address)": {
+            "stateMutability": "view",
+            "code": "function compContributorSpeeds(address) external view returns (uint256)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "compRate()": {
+            "stateMutability": "view",
+            "code": "function compRate() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "compSpeeds(address)": {
+            "stateMutability": "view",
+            "code": "function compSpeeds(address) external view returns (uint256)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "compSupplierIndex(address,address)": {
+            "stateMutability": "view",
+            "code": "function compSupplierIndex(address, address) external view returns (uint256)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                },
+                "_1": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "compSupplySpeeds(address)": {
+            "stateMutability": "view",
+            "code": "function compSupplySpeeds(address) external view returns (uint256)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "compSupplyState(address)": {
+            "stateMutability": "view",
+            "code": "function compSupplyState(address) external view returns (uint224 index, uint32 block)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "index": {
+                    "type": "uint224"
+                },
+                "block": {
+                    "type": "uint32"
+                }
+            }
+        },
+        "comptrollerImplementation()": {
+            "stateMutability": "view",
+            "code": "function comptrollerImplementation() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            }
+        },
+        "lastContributorBlock(address)": {
+            "stateMutability": "view",
+            "code": "function lastContributorBlock(address) external view returns (uint256)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "liquidationIncentiveMantissa()": {
+            "stateMutability": "view",
+            "code": "function liquidationIncentiveMantissa() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "markets(address)": {
+            "stateMutability": "view",
+            "code": "function markets(address) external view returns (bool isListed, uint256 collateralFactorMantissa, bool isComped)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "isListed": {
+                    "type": "bool"
+                },
+                "collateralFactorMantissa": {
+                    "type": "uint256"
+                },
+                "isComped": {
+                    "type": "bool"
+                }
+            }
+        },
+        "maxAssets()": {
+            "stateMutability": "view",
+            "code": "function maxAssets() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "mintGuardianPaused(address)": {
+            "stateMutability": "view",
+            "code": "function mintGuardianPaused(address) external view returns (bool)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            }
+        },
+        "oracle()": {
+            "stateMutability": "view",
+            "code": "function oracle() external view returns (contract PriceOracle)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "contract PriceOracle"
+                }
+            }
+        },
+        "pauseGuardian()": {
+            "stateMutability": "view",
+            "code": "function pauseGuardian() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            }
+        },
+        "pendingAdmin()": {
+            "stateMutability": "view",
+            "code": "function pendingAdmin() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            }
+        },
+        "pendingComptrollerImplementation()": {
+            "stateMutability": "view",
+            "code": "function pendingComptrollerImplementation() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            }
+        },
+        "seizeGuardianPaused()": {
+            "stateMutability": "view",
+            "code": "function seizeGuardianPaused() external view returns (bool)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            }
+        },
+        "transferGuardianPaused()": {
+            "stateMutability": "view",
+            "code": "function transferGuardianPaused() external view returns (bool)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            }
+        }
+    },
+    "events": {},
+    "errors": {},
+    "path": "",
+    "name": "ComptrollerV6Storage"
+}

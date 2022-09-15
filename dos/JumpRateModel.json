@@ -1,0 +1,168 @@
+{
+    "methods": {
+        "baseRatePerBlock()": {
+            "stateMutability": "view",
+            "code": "function baseRatePerBlock() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "blocksPerYear()": {
+            "stateMutability": "view",
+            "code": "function blocksPerYear() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "getBorrowRate(uint256,uint256,uint256)": {
+            "stateMutability": "view",
+            "code": "function getBorrowRate(uint256 cash, uint256 borrows, uint256 reserves) external view returns (uint256)",
+            "inputs": {
+                "cash": {
+                    "type": "uint256",
+                    "description": "The amount of cash in the market"
+                },
+                "borrows": {
+                    "type": "uint256",
+                    "description": "The amount of borrows in the market"
+                },
+                "reserves": {
+                    "type": "uint256",
+                    "description": "The amount of reserves in the market"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "Calculates the current borrow rate per block, with the error code expected by the market"
+        },
+        "getSupplyRate(uint256,uint256,uint256,uint256)": {
+            "stateMutability": "view",
+            "code": "function getSupplyRate(uint256 cash, uint256 borrows, uint256 reserves, uint256 reserveFactorMantissa) external view returns (uint256)",
+            "inputs": {
+                "cash": {
+                    "type": "uint256",
+                    "description": "The amount of cash in the market"
+                },
+                "borrows": {
+                    "type": "uint256",
+                    "description": "The amount of borrows in the market"
+                },
+                "reserves": {
+                    "type": "uint256",
+                    "description": "The amount of reserves in the market"
+                },
+                "reserveFactorMantissa": {
+                    "type": "uint256",
+                    "description": "The current reserve factor for the market"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "Calculates the current supply rate per block"
+        },
+        "isInterestRateModel()": {
+            "stateMutability": "view",
+            "code": "function isInterestRateModel() external view returns (bool)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            }
+        },
+        "jumpMultiplierPerBlock()": {
+            "stateMutability": "view",
+            "code": "function jumpMultiplierPerBlock() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "kink()": {
+            "stateMutability": "view",
+            "code": "function kink() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "multiplierPerBlock()": {
+            "stateMutability": "view",
+            "code": "function multiplierPerBlock() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "utilizationRate(uint256,uint256,uint256)": {
+            "stateMutability": "pure",
+            "code": "function utilizationRate(uint256 cash, uint256 borrows, uint256 reserves) external pure returns (uint256)",
+            "inputs": {
+                "cash": {
+                    "type": "uint256",
+                    "description": "The amount of cash in the market"
+                },
+                "borrows": {
+                    "type": "uint256",
+                    "description": "The amount of borrows in the market"
+                },
+                "reserves": {
+                    "type": "uint256",
+                    "description": "The amount of reserves in the market (currently unused)"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "notice": "Calculates the utilization rate of the market: `borrows / (cash + borrows - reserves)`"
+        }
+    },
+    "events": {
+        "NewInterestParams": {
+            "code": "event NewInterestParams(uint256 baseRatePerBlock, uint256 multiplierPerBlock, uint256 jumpMultiplierPerBlock, uint256 kink)",
+            "inputs": {
+                "baseRatePerBlock": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "multiplierPerBlock": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "jumpMultiplierPerBlock": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "kink": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        }
+    },
+    "errors": {},
+    "path": "",
+    "title": "Compound's JumpRateModel Contract",
+    "author": "Compound",
+    "name": "JumpRateModel"
+}

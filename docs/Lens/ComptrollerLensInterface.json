@@ -1,0 +1,149 @@
+{
+    "methods": {
+        "borrowCaps(address)": {
+            "stateMutability": "view",
+            "code": "function borrowCaps(address) external view returns (uint256)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "claimComp(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function claimComp(address) external nonpayable",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {}
+        },
+        "compAccrued(address)": {
+            "stateMutability": "view",
+            "code": "function compAccrued(address) external view returns (uint256)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "compBorrowSpeeds(address)": {
+            "stateMutability": "view",
+            "code": "function compBorrowSpeeds(address) external view returns (uint256)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "compSpeeds(address)": {
+            "stateMutability": "view",
+            "code": "function compSpeeds(address) external view returns (uint256)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "compSupplySpeeds(address)": {
+            "stateMutability": "view",
+            "code": "function compSupplySpeeds(address) external view returns (uint256)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "getAccountLiquidity(address)": {
+            "stateMutability": "view",
+            "code": "function getAccountLiquidity(address) external view returns (uint256, uint256, uint256)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                },
+                "_1": {
+                    "type": "uint256"
+                },
+                "_2": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "getAssetsIn(address)": {
+            "stateMutability": "view",
+            "code": "function getAssetsIn(address) external view returns (contract CToken[])",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "contract CToken[]"
+                }
+            }
+        },
+        "markets(address)": {
+            "stateMutability": "view",
+            "code": "function markets(address) external view returns (bool, uint256)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                },
+                "_1": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "oracle()": {
+            "stateMutability": "view",
+            "code": "function oracle() external view returns (contract PriceOracle)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "contract PriceOracle"
+                }
+            }
+        }
+    },
+    "events": {},
+    "errors": {},
+    "path": "/Lens",
+    "name": "ComptrollerLensInterface"
+}

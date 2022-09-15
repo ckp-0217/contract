@@ -1,0 +1,55 @@
+{
+    "methods": {
+        "approve(address,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function approve(address, uint256) external nonpayable",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                },
+                "_1": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {}
+        },
+        "balanceOf(address)": {
+            "stateMutability": "view",
+            "code": "function balanceOf(address) external view returns (uint256)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "transferFrom(address,address,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function transferFrom(address, address, uint256) external nonpayable returns (bool)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                },
+                "_1": {
+                    "type": "address"
+                },
+                "_2": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            }
+        }
+    },
+    "events": {},
+    "errors": {},
+    "path": "",
+    "name": "GemLike"
+}
