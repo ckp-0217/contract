@@ -1,0 +1,4 @@
+[
+  "function dai(address) view returns (uint256)",
+  "function hope(address)"
+]

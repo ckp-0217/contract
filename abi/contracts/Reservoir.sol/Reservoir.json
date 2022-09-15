@@ -1,0 +1,9 @@
+[
+  "constructor(uint256,address,address)",
+  "function drip() returns (uint256)",
+  "function dripRate() view returns (uint256)",
+  "function dripStart() view returns (uint256)",
+  "function dripped() view returns (uint256)",
+  "function target() view returns (address)",
+  "function token() view returns (address)"
+]

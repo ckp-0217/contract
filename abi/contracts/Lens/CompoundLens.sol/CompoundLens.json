@@ -1,0 +1,16 @@
+[
+  "function cTokenBalances(address,address) returns (tuple(address,uint256,uint256,uint256,uint256,uint256))",
+  "function cTokenBalancesAll(address[],address) returns (tuple(address,uint256,uint256,uint256,uint256,uint256)[])",
+  "function cTokenMetadata(address) returns (tuple(address,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,bool,uint256,address,uint256,uint256,uint256,uint256,uint256))",
+  "function cTokenMetadataAll(address[]) returns (tuple(address,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,bool,uint256,address,uint256,uint256,uint256,uint256,uint256)[])",
+  "function cTokenUnderlyingPrice(address) returns (tuple(address,uint256))",
+  "function cTokenUnderlyingPriceAll(address[]) returns (tuple(address,uint256)[])",
+  "function getAccountLimits(address,address) returns (tuple(address[],uint256,uint256))",
+  "function getCompBalanceMetadata(address,address) view returns (tuple(uint256,uint256,address))",
+  "function getCompBalanceMetadataExt(address,address,address) returns (tuple(uint256,uint256,address,uint256))",
+  "function getCompVotes(address,address,uint32[]) view returns (tuple(uint256,uint256)[])",
+  "function getGovBravoProposals(address,uint256[]) view returns (tuple(uint256,address,uint256,address[],uint256[],string[],bytes[],uint256,uint256,uint256,uint256,uint256,bool,bool)[])",
+  "function getGovBravoReceipts(address,address,uint256[]) view returns (tuple(uint256,bool,uint8,uint96)[])",
+  "function getGovProposals(address,uint256[]) view returns (tuple(uint256,address,uint256,address[],uint256[],string[],bytes[],uint256,uint256,uint256,uint256,bool,bool)[])",
+  "function getGovReceipts(address,address,uint256[]) view returns (tuple(uint256,bool,bool,uint96)[])"
+]

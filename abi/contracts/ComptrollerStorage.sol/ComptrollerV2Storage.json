@@ -1,0 +1,19 @@
+[
+  "function _borrowGuardianPaused() view returns (bool)",
+  "function _mintGuardianPaused() view returns (bool)",
+  "function accountAssets(address,uint256) view returns (address)",
+  "function admin() view returns (address)",
+  "function borrowGuardianPaused(address) view returns (bool)",
+  "function closeFactorMantissa() view returns (uint256)",
+  "function comptrollerImplementation() view returns (address)",
+  "function liquidationIncentiveMantissa() view returns (uint256)",
+  "function markets(address) view returns (bool, uint256, bool)",
+  "function maxAssets() view returns (uint256)",
+  "function mintGuardianPaused(address) view returns (bool)",
+  "function oracle() view returns (address)",
+  "function pauseGuardian() view returns (address)",
+  "function pendingAdmin() view returns (address)",
+  "function pendingComptrollerImplementation() view returns (address)",
+  "function seizeGuardianPaused() view returns (bool)",
+  "function transferGuardianPaused() view returns (bool)"
+]

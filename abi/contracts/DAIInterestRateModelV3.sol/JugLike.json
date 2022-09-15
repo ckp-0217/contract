@@ -1,0 +1,4 @@
+[
+  "function base() view returns (uint256)",
+  "function ilks(bytes32) view returns (uint256, uint256)"
+]

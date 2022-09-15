@@ -1,0 +1,5 @@
+[
+  "function getActions(uint256) view returns (address[], uint256[], string[], bytes[])",
+  "function getReceipt(uint256,address) view returns (tuple(bool,uint8,uint96))",
+  "function proposals(uint256) view returns (tuple(uint256,address,uint256,uint256,uint256,uint256,uint256,uint256,bool,bool))"
+]

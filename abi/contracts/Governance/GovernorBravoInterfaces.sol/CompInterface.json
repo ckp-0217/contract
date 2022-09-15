@@ -1,0 +1,3 @@
+[
+  "function getPriorVotes(address,uint256) view returns (uint96)"
+]
