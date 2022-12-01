@@ -1,8 +1,0 @@
-[
-  "event PricePosted(address,uint256,uint256,uint256)",
-  "function assetPrices(address) view returns (uint256)",
-  "function getUnderlyingPrice(address) view returns (uint256)",
-  "function isPriceOracle() view returns (bool)",
-  "function setDirectPrice(address,uint256)",
-  "function setUnderlyingPrice(address,uint256)"
-]

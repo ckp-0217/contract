@@ -1,7 +1,0 @@
-[
-  "function chi() view returns (uint256)",
-  "function drip() returns (uint256)",
-  "function exit(uint256)",
-  "function join(uint256)",
-  "function pie(address) view returns (uint256)"
-]

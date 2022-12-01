@@ -1,9 +1,0 @@
-[
-  "function GRACE_PERIOD() view returns (uint256)",
-  "function acceptAdmin()",
-  "function cancelTransaction(address,uint256,string,bytes,uint256)",
-  "function delay() view returns (uint256)",
-  "function executeTransaction(address,uint256,string,bytes,uint256) payable returns (bytes)",
-  "function queueTransaction(address,uint256,string,bytes,uint256) returns (bytes32)",
-  "function queuedTransactions(bytes32) view returns (bool)"
-]

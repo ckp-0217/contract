@@ -1,6 +1,0 @@
-[
-  "function dai() returns (address)",
-  "function exit(address,uint256)",
-  "function join(address,uint256) payable",
-  "function vat() returns (address)"
-]
